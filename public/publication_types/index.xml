@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publication_types | Data Label Center</title>
+    <link>https://example.com/publication_types/</link>
+      <atom:link href="https://example.com/publication_types/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publication_types</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://example.com/media/logo_hu55e1dfaa0e3a729a629d1e237ecb4e9e_27598_300x300_fit_lanczos_3.png</url>
+      <title>Publication_types</title>
+      <link>https://example.com/publication_types/</link>
+    </image>
+    
+  </channel>
+</rss>
