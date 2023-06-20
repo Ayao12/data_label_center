@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories | Data Label Center</title>
-    <link>https://example.com/categories/</link>
-      <atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://dlc-experts.netlify.app/categories/</link>
+      <atom:link href="https://dlc-experts.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate>
     <image>
-      <url>https://example.com/media/logo_hu55e1dfaa0e3a729a629d1e237ecb4e9e_27598_300x300_fit_lanczos_3.png</url>
+      <url>https://dlc-experts.netlify.app/media/logo_hu175947278efd3388f39501f016735ff0_32896_300x300_fit_lanczos_3.png</url>
       <title>Categories</title>
-      <link>https://example.com/categories/</link>
+      <link>https://dlc-experts.netlify.app/categories/</link>
     </image>
     
   </channel>

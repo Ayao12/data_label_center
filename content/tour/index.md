@@ -12,19 +12,42 @@ sections:
           filters:
             brightness: 0.7
         position: right
-      content: Take a look at what we're working on...
-      title: "\U0001F44B Welcome to the group"
+      content: Découvrez nos domaines d'activités....➡️
+      title: "\U0001F44B Bienvenue au Data Label Center" 
     - align: left
       background:
-        color: '#555'
+        color: '#111'
         image:
-          filename: contact.jpg
+          filename: afrique-espoir-competences-formation-professionnelle-maroc.jpg
           filters:
             brightness: 0.7
+          size: cover
         position: center
-      content: Share your knowledge with the group and explore exciting new topics
-        together!
-      title: Lunch & Learn ☕️
+      content: <ul style="color:white">
+                <li>Statistiques avec SPSS, R, Python, Stata</li>
+                <li>Enquêtes avec Sphinx, Epi Info, kobocollect, kobotoolbox, SurveyMonkey</li>
+                <li>Formation en Analyse données</li>
+                <li>Gestion des bases de données avec SQL</li>
+                <li>Développement des site Web statique</li>
+                <li>Formation personnalisée</li>
+               </ul>
+            
+      title: <a style="color:red">Formations pour les particuliers , etudiants, salariés 👨‍🎓</a>
+    - align: right
+      background:
+        color: '#333'
+        image:
+          filename: FC-900x300.jpg
+          filters:
+            brightness: 0.5
+        position: center
+      content: null
+      link:
+        icon: fas fa-suitcase
+        icon_pack: fas
+        text: Postuler à des offres
+        url: ../publication/
+      title: Pulication des offres d'emplois
     - align: right
       background:
         color: '#333'
@@ -33,15 +56,15 @@ sections:
           filters:
             brightness: 0.5
         position: center
-      content: Just opened last month!
+      content: 
       link:
-        icon: graduation-cap
+        icon: fas fa-users
         icon_pack: fas
-        text: Join Us
-        url: ../contact/
-      title: World-Class Semiconductor Lab
+        text: Rejoignez-nous
+        url: ../people/
+      title: Une équipe très dynamique
   design:
-    interval: 2000
+    interval: 2500
     is_fullscreen: true
     loop: false
     slide_height: ""

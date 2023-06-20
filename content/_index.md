@@ -4,14 +4,30 @@ sections:
 - block: hero
   content:
     image:
-      filename: welcome.jpg
+      filename: favpng_web-analytics-big-data-data-analysis.png
     text: |
       <br>
-
-      The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+      
+       **Data Label center** <span style="font-family: times, serif; font-size:20pt; font-style:normal;text-align: justify"> est une startup composée d’un groupe de talents pour la conception d'étude(enquête), Analyse des données (données d'enquête, série temporelle, panel data), la gestion des bases de données, formation en logiciels statistiques et de gestion des bases de données (Stata, SPSS, R, Python, ODK, Excel), etc</span>
+      
+  
+      
     title: |
-      Wowchemy
-      Research Group
+      
+      <span style="color:blue; font-family: times; font-style:italic">Data  Label center</span>
+      
+    
+  design:
+    background:
+      image:
+        filename: background.jpg
+        filters:
+          brightness: 1.1
+        size: cover
+        position: center
+        parallax: true
+        text_color_light: true
+    
 - block: collection
   content:
     count: 5
@@ -26,10 +42,11 @@ sections:
     page_type: post
     subtitle: null
     text: null
-    title: Latest News
+    title: QUI SOMME NOUS?
   design:
     columns: "1"
     view: card
+
 - block: markdown
   content:
     subtitle: ""
@@ -57,7 +74,7 @@ sections:
   content:
     subtitle: null
     text: |
-      {{% cta cta_link="./people/" cta_text="Meet the team →" %}}
+      {{% cta cta_link="./people/" cta_text="Notre équipe →" %}}
     title: null
   design:
     columns: "1"
