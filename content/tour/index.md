@@ -18,7 +18,7 @@ sections:
       background:
         color: '#111'
         image:
-          filename: afrique-espoir-competences-formation-professionnelle-maroc.jpg
+          filename: image2.jpg
           filters:
             brightness: 0.7
           size: cover
@@ -37,7 +37,7 @@ sections:
       background:
         color: '#333'
         image:
-          filename: FC-900x300.jpg
+          filename: image1.jpg
           filters:
             brightness: 0.5
         position: center
