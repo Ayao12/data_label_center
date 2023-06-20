@@ -52,9 +52,9 @@ sections:
       background:
         color: '#333'
         image:
-          filename: welcome.jpg
+          filename: Equipe.png
           filters:
-            brightness: 0.5
+            brightness: 0.8
         position: center
       content: 
       link:
