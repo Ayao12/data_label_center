@@ -18,7 +18,7 @@ sections:
       background:
         color: '#111'
         image:
-          filename: image2.jpg
+          filename: image2.webp
           filters:
             brightness: 0.7
           size: cover
@@ -37,7 +37,7 @@ sections:
       background:
         color: '#333'
         image:
-          filename: image1.jpg
+          filename: image1.webp
           filters:
             brightness: 0.5
         position: center
@@ -52,7 +52,7 @@ sections:
       background:
         color: '#333'
         image:
-          filename: Equipe.png
+          filename: Equipe.webp
           filters:
             brightness: 0.8
         position: center
