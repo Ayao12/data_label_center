@@ -41,7 +41,7 @@ social:
 superuser: false
 title: Alice Wu 吳恩達
 user_groups:
-- Researchers
+- Notre Equipe
 - Visitors
 ---
 

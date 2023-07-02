@@ -8,13 +8,13 @@ sections:
     text: |
       <br>
       
-       **Data Label center** <span style="font-family: times, serif; font-size:20pt; font-style:normal;text-align: justify"> est une startup composée d’un groupe de talents pour la conception d'étude(enquête), Analyse des données (données d'enquête, série temporelle, panel data), la gestion des bases de données, formation en logiciels statistiques et de gestion des bases de données (Stata, SPSS, R, Python, ODK, Excel), etc</span>
+       <p style="font-family: times, serif; font-size:20pt; font-style:normal;text-align: justify"> <span style ="font-weight: bold">Data Label center</span> est une startup composée d’un groupe de talents pour la conception d'étude(enquête), Analyse des données (données d'enquête, série temporelle, panel data), la gestion des bases de données, formation en logiciels statistiques et de gestion des bases de données (Stata, SPSS, R, Python, ODK, Excel), etc</p>
       
   
       
     title: |
       
-      <span style="color:blue; font-family: times; font-style:italic">Data  Label center</span>
+      <h1 style="color:blue; font-family: times;font-weight: bold;">Data  Label center</h1>
       
     
   design:
@@ -28,24 +28,24 @@ sections:
         parallax: true
         text_color_light: true
     
-- block: collection
-  content:
-    count: 5
-    filters:
-      author: ""
-      category: ""
-      exclude_featured: false
-      publication_type: ""
-      tag: ""
-    offset: 0
-    order: desc
-    page_type: post
-    subtitle: null
-    text: null
-    title: QUI SOMME NOUS?
-  design:
-    columns: "1"
-    view: card
+# - block: collection
+#   content:
+#     count: 5
+#     filters:
+#       author: ""
+#       category: ""
+#       exclude_featured: false
+#       publication_type: ""
+#       tag: ""
+#     offset: 0
+#     order: desc
+#     page_type: post
+#     subtitle: null
+#     text: null
+#     title: QUI SOMME NOUS?
+#   design:
+#     columns: "1"
+#     view: card
 
 - block: markdown
   content:

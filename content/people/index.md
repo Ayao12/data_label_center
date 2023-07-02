@@ -7,6 +7,7 @@ sections:
     sort_by: Params.last_name
     title: Notre Equipe
     user_groups:
+    - Notre Equipe
     - Principal Investigators
     - Researchers
     - Grad Students
