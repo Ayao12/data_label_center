@@ -5,7 +5,7 @@ sections:
   content:
     sort_ascending: true
     sort_by: Params.last_name
-    title: Notre Equipe
+    title: ""
     user_groups:
     - Notre Equipe
     - Principal Investigators
