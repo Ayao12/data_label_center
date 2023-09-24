@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<!-- This site was created with Wowchemy. https://www.wowchemy.com -->
+<!-- Last Published: September 21, 2023 --><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.312fa478a18a798c9270bab324760a16.css" />
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+
+
+
+
+  <meta name="author" content="Ayao Antoine Nomenyo" />
+
+
+
+
+
+  
+
+<meta name="description" content="Analyse des données séquentielles et détection des règles d’association " />
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/" />
+<link rel="canonical" href="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/" />
+
+
+
+  <link rel="manifest" href="/manifest.webmanifest" />
+
+
+
+<link rel="icon" type="image/png" href="/media/icon_hu8498892f0c2c81c6ce25faa029104187_9325_32x32_fill_lanczos_center_3.png" />
+<link rel="apple-touch-icon" type="image/png" href="/media/icon_hu8498892f0c2c81c6ce25faa029104187_9325_180x180_fill_lanczos_center_3.png" />
+
+<meta name="theme-color" content="#1565c0" />
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="twitter:site" content="@wowchemy" />
+  <meta property="twitter:creator" content="@wowchemy" />
+<meta property="twitter:image" content="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/featured.png" />
+<meta property="og:site_name" content="Data Label Center" />
+<meta property="og:url" content="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/" />
+<meta property="og:title" content="Analyse du panier de la ménagère | Data Label Center" />
+<meta property="og:description" content="Analyse des données séquentielles et détection des règles d’association " /><meta property="og:image" content="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/featured.png" /><meta property="og:locale" content="en-us" />
+
+  
+    <meta
+      property="article:published_time"
+      content="2023-09-21T00:00:00&#43;00:00"
+    />
+  
+  
+    <meta property="article:modified_time" content="2021-01-07T04:48:50&#43;00:00">
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+
+
+  
+  <title>Analyse du panier de la ménagère | Data Label Center</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="d2846a7f6151e3c55aae1062ccff8b67" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.fe8634e7d00f14d07fb33caf14cc8e55.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header header--fixed">
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/"><img src="/media/logo_hu175947278efd3388f39501f016735ff0_32896_0x70_resize_lanczos_3.png" alt="Data Label Center"
+            
+            ></a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/"><img src="/media/logo_hu175947278efd3388f39501f016735ff0_32896_0x70_resize_lanczos_3.png" alt="Data Label Center"
+          
+          ></a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/tour"><span>SERVICES</span></a>
+          </li>
+
+          
+          
+
+          
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>PROJETS</span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+              
+                <a class="dropdown-item" href="/tuto"><span>Tutoriels</span></a>
+              
+                <a class="dropdown-item" href="/article"><span>Articles</span></a>
+              
+                <a class="dropdown-item" href="/formation"><span>Formations</span></a>
+              
+            </div>
+          </li>
+
+          
+          
+
+          
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>PUBLICATIONS</span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+              
+                <a class="dropdown-item" href="/post"><span>Nouvelles</span></a>
+              
+                <a class="dropdown-item" href="/offre"><span>Offres d'emplois</span></a>
+              
+            </div>
+          </li>
+
+          
+          
+
+          
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"><span>CONTACT & EQUIPE</span><span class="caret"></span>
+            </a>
+            <div class="dropdown-menu">
+              
+                <a class="dropdown-item" href="/contact"><span>Contact</span></a>
+              
+                <a class="dropdown-item" href="/people"><span>Notre équipe</span></a>
+              
+            </div>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Analyse du panier de la ménagère</h1>
+
+  
+  <p class="page-subtitle">Partie 1: Règles d&rsquo;association</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+          Last updated on
+      
+    
+    Jan 7, 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/r/">R</a>, <a href="/category/visualisation/">Visualisation</a>, <a href="/category/arules/">arules</a>, <a href="/category/regles-dassociation/">Règles d&#39;association</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+    
+      
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="/" >
+    <i class="fab fa-github "></i></a>
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 578px; max-height: 438px;">
+  <div style="position: relative">
+    <img src="/tuto/analyse-panier-menagere/featured_huf0466a365b1ac7f96de78bdde45b3d85_53000_720x2500_fit_q75_h2_lanczos_3.webp" width="578" height="438" alt="" class="featured-image">
+    <span class="article-header-caption">Source: Data Mining Concepts and Techniques, Third Edition.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <script src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/kePrint/kePrint.js"></script>
+<link href="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/lightable/lightable.css" rel="stylesheet" />
+<h2 id="introduction">Introduction</h2>
+<p>Le concept de l&rsquo;analyse du <strong>panier de la ménagère</strong> fait référence à
+une technique d&rsquo;analyse de données utilisée pour comprendre les
+comportements des clients, en fonction de leur similitude au produits
+qu&rsquo;ils achètent et pour découvrir les relations entre ces produits
+achetés. L&rsquo;idée serait pour une entreprise d&rsquo;utiliser ces
+apprentissages pour bien mener les campagnes marketing, mieux gérer les
+inventaires, aider les clients à trouver plus rapidement des produits
+pertinents et améliorer les relations clients. Cela peut conduire à
+davantage de ventes croisées et de ventes incitatives en suggérant des
+produits ou services supplémentaires.</p>
+<p>Dans ce tutoriel, nous allons voir comment nous pouvons analyser et
+visualiser les données de transactions, nous trouverons des techniques
+qui peuvent nous aider à trouver des modèles de comportement et de
+désabonnement d&rsquo;un client en fonction de sa séquence d&rsquo;achat. Ce
+tutoriel est basé sur l&rsquo;article de <strong>Suman ghorai</strong> intitulé <a href="https://rpubs.com/ghorai77/526368" target="_blank" rel="noopener">&ldquo;Market
+Basket Analysis&rdquo;</a>.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/tuto/analyse-panier-menagere/got_thyrion.gif"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+<!-- --></p>
+<h2 id="quelques-notions-de-bases">Quelques notions de bases</h2>
+<h3 id="règles-de-lassociation">Règles de l&rsquo;Association</h3>
+<p>Le but de l&rsquo;analyse du <em>panier de la ménagère</em> est souvent d&rsquo;identifier
+les règles d&rsquo;association entre les articles et cela peut être fait par
+l&rsquo;algorithme <strong>Apriori</strong>. Une règle d&rsquo;association implique que si un
+élément <strong>A</strong> se produit, alors l&rsquo;élément <strong>B</strong> se produit également
+avec une certaine probabilité. A titre d&rsquo;exemple, considérons l&rsquo;exemple
+suivant:</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> transaction </th>
+   <th style="text-align:left;"> articles </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> T1 </td>
+   <td style="text-align:left;"> {pain, lait, sucre} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T2 </td>
+   <td style="text-align:left;"> {pain, œufs} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T3 </td>
+   <td style="text-align:left;"> {œufs, Mayonnaise} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T4 </td>
+   <td style="text-align:left;"> {pain, lait, œufs} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T5 </td>
+   <td style="text-align:left;"> {pain, lait, Couches, œufs, sucre} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T6 </td>
+   <td style="text-align:left;"> {lait, Couches, sucre} </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> T7 </td>
+   <td style="text-align:left;"> {lait, sucre, Couches} </td>
+  </tr>
+</tbody>
+</table>
+<p>Dans le tableau ci-dessus, nous pouvons voir sept transactions. Chaque
+transaction montre les articles achetés dans cette transaction. Nous
+pouvons représenter nos articles comme un ensemble d&rsquo;éléments comme suit
+:</p>
+<p>$$
+I = {i_1, i_2, \cdots, i_k}
+$$ Où <code>\(k\)</code> est le nombre total d&rsquo;articles.</p>
+<p>Dans le cas de notre table ci-dessus, nous avons</p>
+<p>$$ I = { \mbox{pain, lait, sucre, œufs, Mayonnaise, Couches} }$$</p>
+<p>Et l&rsquo;ensemble des transactions est :</p>
+<p><code>$$T = \{ T_1, T_2, T_3, T_4, T_5, T_6, \cdots, T_N \}$$</code> où <code>\(N\)</code> est le
+nombre total de transactions.</p>
+<p>Par exemple dans notre cas on a:</p>
+<p>$$ T_1 = {\mbox{pain, lait, sucre}} $$</p>
+<p>Ensuite, la règle d&rsquo;association est définie comme une implication de la
+forme :</p>
+<p>$$
+X \Rightarrow Y,,, \mbox{où},, X\subset I, Y\subset I,, \mbox{et},, X\cap Y = \emptyset
+$$</p>
+<p>Par exemple, on peut extraire de notre table ci-dessus, la règle
+suivante:</p>
+<p>$${\mbox{pain, lait}} \Rightarrow {\mbox{sucre}} $$</p>
+<p>Toutefois, on peut se poser la question de savoir jusqu&rsquo;à quel niveau
+cette règle est elle plausible ? ou encore comment évaluer cette règle?</p>
+<p>Dans la section suivante, nous allons définir quatre mesures qui nous
+permettrons d&rsquo;évaluer la précision d&rsquo;une règle d&rsquo;association.</p>
+<h3 id="mésures-dévaluation">Mésures d&rsquo;évaluation</h3>
+<h4 id="support">Support</h4>
+<p>Le support est une indication de la fréquence d&rsquo;apparition de l&rsquo;ensemble
+des items du panier dans l&rsquo;ensemble de données. Il représente la
+fiabilité. Ce critère permet de fixer un seuil en dessous duquel les
+règles ne sont pas considérées comme fiables. Il est défini comme suit:</p>
+<p><code>$$supp(X\Rightarrow Y)=\frac{|X \cup Y| }{N}$$</code> En d&rsquo;autres termes, c&rsquo;est
+le nombre de transactions avec les deux <code>\(X\)</code> et <code>\(Y\)</code> divisé par le nombre
+total de transactions. Par exemple avec notre table ci-dessus, nous
+avons:</p>
+<ul>
+<li>
+<p><code>\(supp(\mbox{pain} \Rightarrow \mbox{lait}) = \frac{3}{7} = 43\%\)</code></p>
+</li>
+<li>
+<p><code>\(supp(\mbox{pain} \Rightarrow \mbox{sucre}) = \frac{2}{7} = 29\%\)</code></p>
+</li>
+</ul>
+<h4 id="la-confiance">La confiance</h4>
+<p>La confiance est une indication de la précision de la règle. Pour une
+règle <code>\(X\Rightarrow Y\)</code>, cela signifie pour <code>\(X\)</code> donné quelle est la
+probabilité d&rsquo;avoir <code>\(Y\)</code> dans la même transaction? La confiance d&rsquo;une
+règle peut être vue comme la probabilité conditionnelle
+<code>\(conf(X\Rightarrow Y) = Pr(Y|X)\)</code>.</p>
+<p><code>$$conf(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X)}$$</code></p>
+<p>Exemple avec notre table de transactions ci-dessus:</p>
+<ul>
+<li>Considérons la règle
+<code>\(\{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\}\)</code>, le support de
+l&rsquo;ensemble <code>\(\{\mbox{pain, lait}, \mbox{œufs}\}\)</code> est <code>\(2\)</code> et le nombre
+de transaction étant <code>\(7\)</code>, le support de la règle est donc <code>\(2/7\)</code>. La
+confiance est obtenue en divisant le support de l&rsquo;ensemble
+<code>\(\{\mbox{pain, lait}, \mbox{œufs}\}\)</code> par le support de l&rsquo;ensemble
+<code>\(\{\mbox{pain, lait}\}\)</code> qui est égal à <code>\(4\)</code>. La confiance est donc
+égale à <code>\(2/4 = 50\%\)</code>.</li>
+</ul>
+<p><code>$$conf(\{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\}) = \frac{2/7}{4/7} = 50\%$$</code></p>
+<ul>
+<li><code>\(conf(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{5/7} = 80\%\)</code></li>
+</ul>
+<h4 id="lift">Lift</h4>
+<p>Le lift d&rsquo;une règle est le rapport du support observé et du support
+attendu si <code>\(X\)</code> et <code>\(Y\)</code> étaient indépendant. Il est défini comme suit:</p>
+<p><code>$$lift(X \Rightarrow Y)= \frac{supp(X\cup Y)}{supp(X)supp(Y)}$$</code> Un lift
+supérieur à <code>\(1\)</code> indique qu&rsquo;il existe bien un lien entre les <code>\(2\)</code>
+éléments.</p>
+<ul>
+<li><code>\(lift(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{(5/7)(4/7)} = 1.4\)</code></li>
+</ul>
+<h2 id="description-des-données">Description des données</h2>
+<p>L&rsquo;ensemble de données comprend 21293 observations provenant d&rsquo;une
+boulangerie. Le fichier de données contient quatre variables, date,
+heure, Numéro d&rsquo;identification des transactions et articles. Numéro
+d&rsquo;identification des transactions va de 1 à 9684.</p>
+<p>Les données sont disponible
+<a href="https://www.kaggle.com/sulmansarwar/transactions-from-a-bakery/version/1" target="_blank" rel="noopener">ici</a>.</p>
+<h3 id="chargement-des-packages">Chargement des packages</h3>
+<p>Commençons donc par charger les librairies dont nous avons besoins et
+notre ensemble de données.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">googleVis</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">kableExtra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">arules</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">gridExtra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">arulesViz</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">trans</span> <span class="o">&lt;-</span> <span class="nf">read.transactions</span><span class="p">(</span><span class="s">&#34;BreadBasket_DMS.csv&#34;</span>
+</span></span><span class="line"><span class="cl">                           <span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;single&#34;</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                           <span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">,</span> <span class="n">rm.duplicates</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="analayse-et-visualisation-des-donnnées">Analayse et visualisation des donnnées</h3>
+<p>Dans un premier temps, traçons la fréquence d&rsquo;achat des articles, afin
+d&rsquo;avoir une idée sur la distribution des produits. Nous utilisons la fonction
+<code>itemFrequencyPlot()</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">itemFrequencyPlot</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">topN</span> <span class="o">=</span> <span class="m">20</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&#34;absolute&#34;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&#34;wheat2&#34;</span><span class="p">,</span> <span class="n">xlab</span> <span class="o">=</span> <span class="s">&#34;Achat&#34;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">,</span>  <span class="n">ylab</span> <span class="o">=</span> <span class="s">&#34;Frequence&#34;</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Frenquence d&#39;achat des produits&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<p>Le café (<em>coffee</em>) est de loin le produit le plus vendu, suivi du pain
+(<em>bread</em>). Il est aussi possible de visualiser les transactions en
+foncton des dates.</p>
+<h4 id="nombre-de-transactions-par-mois">Nombre de transactions par mois</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trans_csv</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#34;BreadBasket_DMS.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">trans_csv</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">Date</span> <span class="o">=</span> <span class="nf">as.Date</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%Y-%m-%d&#34;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">Month</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">((</span><span class="n">lubridate</span><span class="o">::</span><span class="nf">month</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">))))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">group_by</span><span class="p">(</span><span class="n">Month</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summarise</span><span class="p">(</span><span class="n">Transactions</span> <span class="o">=</span> <span class="nf">n_distinct</span><span class="p">(</span><span class="n">Item</span><span class="p">))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Month</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&#34;identity&#34;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;mistyrose2&#34;</span><span class="p">,</span> <span class="n">show.legend</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_label</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ggtitle</span><span class="p">(</span><span class="s">&#34;Transactions par Mois&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;Mois&#34;</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme</span><span class="p">(</span><span class="n">plot.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">hjust</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="n">ggeasy</span><span class="o">::</span><span class="nf">easy_center_title</span><span class="p">()</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme_bw</span><span class="p">()</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<p>Les données couvrent les dates du 30/10/2016 au 09/04/2017 et donc le
+mois d&rsquo;octobre est le mois dont nous avons peu de transactions par
+rapport aux autres mois.</p>
+<h4 id="nombre-de-transactions-par-jour-de-la-semaine">Nombre de transactions par jour de la Semaine</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trans_csv</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">Date</span> <span class="o">=</span> <span class="nf">as.Date</span><span class="p">(</span><span class="n">trans_csv</span><span class="o">$</span><span class="n">Date</span><span class="p">,</span> <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%Y-%m-%d&#34;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">WeekDay</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">weekdays</span><span class="p">(</span><span class="n">Date</span><span class="p">)))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">group_by</span><span class="p">(</span><span class="n">WeekDay</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summarise</span><span class="p">(</span><span class="n">Transactions</span> <span class="o">=</span> <span class="nf">n_distinct</span><span class="p">(</span><span class="n">Item</span><span class="p">))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">WeekDay</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&#34;identity&#34;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;peachpuff2&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">           <span class="n">show.legend</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_label</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#34;Transactions par jour de la semaine&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;Jours de la semaine&#34;</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">scale_x_discrete</span><span class="p">(</span><span class="n">limits</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;lundi&#34;</span><span class="p">,</span> <span class="s">&#34;mardi&#34;</span><span class="p">,</span> <span class="s">&#34;mercredi&#34;</span><span class="p">,</span> <span class="s">&#34;jeudi&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="s">&#34;vendredi&#34;</span><span class="p">,</span> <span class="s">&#34;samedi&#34;</span><span class="p">,</span> <span class="s">&#34;dimanche&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">theme_bw</span><span class="p">()</span> 
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<p>Comme on peut le voir clairement qu&rsquo;en général, il y a des achats dans
+l&rsquo;épicerie tous les jours de la semaine avec un taux moins élevé les
+lundi et mardi.</p>
+<h4 id="nombre-de-transactions-par-heure">Nombre de transactions par heure</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trans_csv</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">mutate</span><span class="p">(</span><span class="n">Hour</span> <span class="o">=</span> <span class="nf">as.factor</span><span class="p">(</span><span class="nf">hour</span><span class="p">(</span><span class="nf">hms</span><span class="p">(</span><span class="n">Time</span><span class="p">))))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">group_by</span><span class="p">(</span><span class="n">Hour</span><span class="p">)</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">summarise</span><span class="p">(</span><span class="n">Transactions</span> <span class="o">=</span> <span class="nf">n_distinct</span><span class="p">(</span><span class="n">Transaction</span><span class="p">))</span> <span class="o">%&gt;%</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Hour</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span><span class="o">=</span><span class="s">&#34;identity&#34;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#34;steelblue1&#34;</span>
+</span></span><span class="line"><span class="cl">           <span class="p">,</span> <span class="n">show.legend</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;black&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_label</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">label</span> <span class="o">=</span> <span class="n">Transactions</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#34;Transactions par  heure&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">xlab</span><span class="p">(</span><span class="s">&#34;Heure&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="nf">ylab</span><span class="p">(</span><span class="s">&#34;Nombre de transactions&#34;</span><span class="p">)</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">theme_bw</span><span class="p">()</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<p>On a plus de transactions à 11h dans la boulangerie.</p>
+<h2 id="algorithme-apriori">Algorithme apriori</h2>
+<h3 id="choix-du-support-et-de-la-confiance">Choix du support et de la confiance</h3>
+<p>Le choix d&rsquo;un seuil pour le support et la confiance est important dans
+la détermination des règles d&rsquo;association. Pour des valeurs trop bas,
+l&rsquo;algorithme prend plus de temps à exécuter et beaucoup de règles sont
+détecter (la plupart d&rsquo;entre elles ne sont pas utiles). Alors, quelles
+valeurs choisies? Il est recommandé de tester plusieurs valeurs et voir
+graphiquement combien de règles sont générées pour chaque combinaison.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Différentes valeurs du support et de la confiance</span>
+</span></span><span class="line"><span class="cl"><span class="n">supportLevels</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.1</span><span class="p">,</span> <span class="m">0.05</span><span class="p">,</span> <span class="m">0.01</span><span class="p">,</span> <span class="m">0.005</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">confidenceLevels</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.9</span><span class="p">,</span> <span class="m">0.8</span><span class="p">,</span> <span class="m">0.7</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="m">0.3</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rules_sup10</span> <span class="o">&lt;-</span> <span class="nf">integer</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rules_sup5</span> <span class="o">&lt;-</span> <span class="nf">integer</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rules_sup1</span> <span class="o">&lt;-</span> <span class="nf">integer</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">rules_sup0.5</span> <span class="o">&lt;-</span> <span class="nf">integer</span><span class="p">(</span><span class="n">length</span> <span class="o">=</span> <span class="m">9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># L&#39;algorithme Apriori avec un support de 0.1</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">confidenceLevels</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">rules_sup10[i]</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">apriori</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">sup</span> <span class="o">=</span> <span class="n">supportLevels[1]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                   <span class="n">conf</span> <span class="o">=</span> <span class="n">confidenceLevels[i]</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;rules&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># L&#39;algorithme Apriori avec un support de 0.5</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">confidenceLevels</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">rules_sup5[i]</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">apriori</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">sup</span> <span class="o">=</span> <span class="n">supportLevels[2]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                  <span class="n">conf</span> <span class="o">=</span> <span class="n">confidenceLevels[i]</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;rules&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># L&#39;algorithme Apriori avec un support de 0.01</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">confidenceLevels</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">rules_sup1[i]</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">apriori</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">sup</span> <span class="o">=</span> <span class="n">supportLevels[3]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                  <span class="n">conf</span><span class="o">=</span><span class="n">confidenceLevels[i]</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;rules&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># L&#39;algorithme Apriori avec un support de 0.005</span>
+</span></span><span class="line"><span class="cl"><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="nf">length</span><span class="p">(</span><span class="n">confidenceLevels</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="n">rules_sup0.5[i]</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="nf">apriori</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">sup</span> <span class="o">=</span> <span class="n">supportLevels[4]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                                    <span class="n">conf</span> <span class="o">=</span> <span class="n">confidenceLevels[i]</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;rules&#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Dans la figure suivante, nous avons le nombre de règles générées avec
+différentes valeurs du support et de la confiance.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">num_rules</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">rules_sup10</span><span class="p">,</span> <span class="n">rules_sup5</span><span class="p">,</span> <span class="n">rules_sup1</span><span class="p">,</span> <span class="n">rules_sup0.5</span><span class="p">,</span> <span class="n">confidenceLevels</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Nombre de règles avec support : 0.1, 0.05, 0.01, 0.005</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ggplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">num_rules</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">confidenceLevels</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup10</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.1&#34;</span><span class="p">))</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup10</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.1&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup5</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.05&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup5</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.05&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.01&#34;</span><span class="p">))</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup1</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.01&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_line</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup0.5</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.005&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">rules_sup0.5</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="s">&#34;Support  de  0.05&#34;</span><span class="p">))</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="nf">labs</span><span class="p">(</span> <span class="n">x</span> <span class="o">=</span> <span class="s">&#34;Niveau de confiance&#34;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&#34;Nombre de règles&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">       <span class="n">title</span> <span class="o">=</span> <span class="s">&#34;Algorithme Apriori avec différentes valeurs du support&#34;</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">theme</span><span class="p">(</span><span class="n">legend.title</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">())</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<p>Analysons le graphique:</p>
+<ul>
+<li>
+<p>Avec un support de 0.1, nous avons que quelques règles avec une
+confiance très faible. Cela signifie qu&rsquo;il n&rsquo;y a pas assez
+d&rsquo;associations fréquentes dans notre ensemble de données. Les règles
+qui en résultent ne sont donc pas représentatives.</p>
+</li>
+<li>
+<p>Avec un support de 0.05, nous obtenons une règle avec une confiance
+inférieure à 0.5.</p>
+</li>
+<li>
+<p>Pour un support de 0.01, nous obtenons des règles dont au moins 13
+ont une confiance de d&rsquo;au moins de 0.5.</p>
+</li>
+<li>
+<p>Pour une confiance de 0.005, trop de règles à analyser.</p>
+</li>
+</ul>
+<p>Pour résumer, nous allons utiliser un support de 0.01 et un confiance de
+0.5.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">rules_sup1_conf50</span> <span class="o">&lt;-</span> <span class="nf">apriori</span><span class="p">(</span><span class="n">trans</span><span class="p">,</span> <span class="n">parameter</span> <span class="o">=</span> <span class="nf">list</span><span class="p">(</span><span class="n">sup</span> <span class="o">=</span> <span class="n">supportLevels[3]</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                             <span class="n">conf</span> <span class="o">=</span> <span class="n">confidenceLevels[5]</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="s">&#34;rules&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Inspection des règles d&#39;association</span>
+</span></span><span class="line"><span class="cl"><span class="nf">inspect</span><span class="p">(</span><span class="n">rules_sup1_conf50</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">##      lhs                 rhs      support    confidence coverage   lift    
+</span></span><span class="line"><span class="cl">## [1]  {Tiffin}         =&gt; {Coffee} 0.01058361 0.5468750  0.01935289 1.134577
+</span></span><span class="line"><span class="cl">## [2]  {Spanish Brunch} =&gt; {Coffee} 0.01406108 0.6326531  0.02222558 1.312537
+</span></span><span class="line"><span class="cl">## [3]  {Scone}          =&gt; {Coffee} 0.01844572 0.5422222  0.03401875 1.124924
+</span></span><span class="line"><span class="cl">## [4]  {Toast}          =&gt; {Coffee} 0.02570305 0.7296137  0.03522830 1.513697
+</span></span><span class="line"><span class="cl">## [5]  {Alfajores}      =&gt; {Coffee} 0.02237678 0.5522388  0.04052011 1.145705
+</span></span><span class="line"><span class="cl">## [6]  {Juice}          =&gt; {Coffee} 0.02131842 0.5300752  0.04021772 1.099723
+</span></span><span class="line"><span class="cl">## [7]  {Hot chocolate}  =&gt; {Coffee} 0.02721500 0.5263158  0.05170850 1.091924
+</span></span><span class="line"><span class="cl">## [8]  {Medialuna}      =&gt; {Coffee} 0.03296039 0.5751979  0.05730269 1.193337
+</span></span><span class="line"><span class="cl">## [9]  {Cookies}        =&gt; {Coffee} 0.02978530 0.5267380  0.05654672 1.092800
+</span></span><span class="line"><span class="cl">## [10] {NONE}           =&gt; {Coffee} 0.04172966 0.5810526  0.07181736 1.205484
+</span></span><span class="line"><span class="cl">## [11] {Sandwich}       =&gt; {Coffee} 0.04233444 0.5679513  0.07453886 1.178303
+</span></span><span class="line"><span class="cl">## [12] {Pastry}         =&gt; {Coffee} 0.04868461 0.5590278  0.08708800 1.159790
+</span></span><span class="line"><span class="cl">## [13] {Cake}           =&gt; {Coffee} 0.05654672 0.5389049  0.10492894 1.118042
+</span></span><span class="line"><span class="cl">##      count
+</span></span><span class="line"><span class="cl">## [1]   70  
+</span></span><span class="line"><span class="cl">## [2]   93  
+</span></span><span class="line"><span class="cl">## [3]  122  
+</span></span><span class="line"><span class="cl">## [4]  170  
+</span></span><span class="line"><span class="cl">## [5]  148  
+</span></span><span class="line"><span class="cl">## [6]  141  
+</span></span><span class="line"><span class="cl">## [7]  180  
+</span></span><span class="line"><span class="cl">## [8]  218  
+</span></span><span class="line"><span class="cl">## [9]  197  
+</span></span><span class="line"><span class="cl">## [10] 276  
+</span></span><span class="line"><span class="cl">## [11] 280  
+</span></span><span class="line"><span class="cl">## [12] 322  
+</span></span><span class="line"><span class="cl">## [13] 374
+</span></span></code></pre></div><p>Interprétation des règles</p>
+<ul>
+<li>
+<p>54% des clients qui ont acheté un Tiffin chaud ont également acheté
+un café.</p>
+</li>
+<li>
+<p>63% des clients qui ont acheté un Spanish Brunch ont également
+acheté un café.</p>
+</li>
+<li>
+<p>73% des clients qui ont acheté un toast ont également acheté un
+café.</p>
+</li>
+</ul>
+<p>Et ainsi de suite. Il semble que dans cette boutique, il y ait beaucoup
+d&rsquo;amoureux du café.</p>
+<h2 id="visualiser-les-règles-dassociation">Visualiser les règles d&rsquo;association</h2>
+<p>Visualisons quelques graphiques des règles avec la libraire <code>arulesViz</code>.
+Commençons par un simple nuage de points avec les différentes mesures
+d&rsquo;intérêt sur les axes (lift et support) et confiance représentée par la
+couleur des points.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">rules_sup1_conf50</span><span class="p">,</span> <span class="n">measure</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;support&#34;</span><span class="p">,</span> <span class="s">&#34;lift&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="p">,</span> <span class="n">shading</span> <span class="o">=</span> <span class="s">&#34;confidence&#34;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Nuage de points des  mesures&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<p>Le graphique suivant représente le graphe des règles d&rsquo;association. Les
+sommets représentent les articles et les règles sont représentées par
+les liaisons entre les articles à l&rsquo;aide de flèches.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">rules_sup1_conf50</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;graph&#34;</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&#34;Graphe des règles d&#39;association&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## Warning: Unknown control parameters: main
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">## Available control parameters (with default values):
+</span></span><span class="line"><span class="cl">## layout	 =  stress
+</span></span><span class="line"><span class="cl">## circular	 =  FALSE
+</span></span><span class="line"><span class="cl">## ggraphdots	 =  NULL
+</span></span><span class="line"><span class="cl">## edges	 =  &lt;environment&gt;
+</span></span><span class="line"><span class="cl">## nodes	 =  &lt;environment&gt;
+</span></span><span class="line"><span class="cl">## nodetext	 =  &lt;environment&gt;
+</span></span><span class="line"><span class="cl">## colors	 =  c(&#34;#EE0000FF&#34;, &#34;#EEEEEEFF&#34;)
+</span></span><span class="line"><span class="cl">## engine	 =  ggplot2
+</span></span><span class="line"><span class="cl">## max	 =  100
+</span></span><span class="line"><span class="cl">## verbose	 =  FALSE
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-13-1.png" width="672" />
+<p>Il est aussi possible de représenter les règles sous une forme
+matricielle groupée. Le support et le lift sont représentés par la
+taille et la couleur des bulles respectueusement.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">plot</span><span class="p">(</span><span class="n">rules_sup1_conf50</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">&#34;grouped&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><img src="https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/index_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<h2 id="conclusion">Conclusion</h2>
+<p>L&rsquo;analyse du panier de la ménagère est une technique très utile pour
+analyser les données. Traditionnellement, il n&rsquo;est utilisé que pour les
+données de transaction. Cela permettra de booster vos ventes et de
+garder une bonne relation avec vos clients. J&rsquo;espère que cela vous
+aidera à faire votre propre analyse des transactions et à bien disposer
+les articles qui sont liés entre eux.</p>
+<p>Si quelque chose vous freine ou vous pose problème dans les codes,
+indiquez le moi en commentaire, et j&rsquo;essaierais de vous apporter une
+réponse.</p>
+<p>Si cet tutoriel vous a plu ou vous a été utile, n&rsquo;oubliez pas de le
+partager !.</p>
+<p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img alt=""
+           src="/tuto/analyse-panier-menagere/tenor.gif"
+           loading="lazy" data-zoomable /></div>
+  </div></figure>
+<!-- --></p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/r/">R</a>
+  
+  <a class="badge badge-light" href="/tag/rstudio/">Rstudio</a>
+  
+  <a class="badge badge-light" href="/tag/arules/">arules</a>
+  
+  <a class="badge badge-light" href="/tag/visualisation/">Visualisation</a>
+  
+  <a class="badge badge-light" href="/tag/regles-dassociation/">Règles d&#39;association</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F&amp;text=Analyse&#43;du&#43;panier&#43;de&#43;la&#43;m%C3%A9nag%C3%A8re" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F&amp;t=Analyse&#43;du&#43;panier&#43;de&#43;la&#43;m%C3%A9nag%C3%A8re" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a href="mailto:?subject=Analyse%20du%20panier%20de%20la%20m%C3%A9nag%C3%A8re&amp;body=https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F&amp;title=Analyse&#43;du&#43;panier&#43;de&#43;la&#43;m%C3%A9nag%C3%A8re" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Analyse&#43;du&#43;panier&#43;de&#43;la&#43;m%C3%A9nag%C3%A8re%20https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fdlc-experts.netlify.app%2Ftuto%2Fanalyse-panier-menagere%2F&amp;title=Analyse&#43;du&#43;panier&#43;de&#43;la&#43;m%C3%A9nag%C3%A8re" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="/author/ayao-antoine-nomenyo/"><img class="avatar mr-3 avatar-circle" src="/author/ayao-antoine-nomenyo/avatar_hudc572c37dac374519203743f1dd08f87_53138_270x270_fill_q75_lanczos_center.jpg" alt="Ayao Antoine Nomenyo"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/author/ayao-antoine-nomenyo/">Ayao Antoine Nomenyo</a></h5>
+      <h6 class="card-subtitle">Project Manager and Data Analyst</h6>
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/AyaoNomenyo" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/Ayao12/" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/ayao-nomenyo/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    © 2023 Data Label Center. Tous droits réservés
+  </p>
+  
+
+
+
+
+
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.2621b0c3d1130efc0b22bddd510b0848.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/en/js/wowchemy.min.53e2d4aa5b5aee6f858cf53dc1025ec4.js"></script>
+
+
+
+  <script src="/js/wowchemy-map.a26e9d2f7238ba5b868384f1c5bc6477.js" type="module"></script>
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

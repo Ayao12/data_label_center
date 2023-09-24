@@ -3,22 +3,48 @@
 #     desired widget in your `content/home/` folder.
 #   The weight parameter defines the order that the links will appear in.
 
+
 main:
-  - name: Services
+  - name: SERVICES
     url: tour
     weight: 10
-  - name: Nouvelles
-    url: post
-    weight: 20
-  - name: Formation
-    url: people
-    weight: 30
-  - name: Projet
+  - name: PROJETS
+    identifier: proj
     url: event
-    weight: 40
-  - name: Publications
+    weight: 20
+  - name: Tutoriels
+    parent: proj
+    url: tuto # Dossier à ajouter
+    weight: 10
+  - name: Formations
+    parent: proj
+    url: formation # Dossier à ajouter
+    weight: 30
+  - name: Articles
+    parent: proj
+    url: article # Dossier à ajouter
+    weight: 20
+  - name: PUBLICATIONS
+    identifier: pub
     url: publication
-    weight: 50
+    weight: 30
+  - name: Nouvelles
+    parent: pub
+    url: post
+    weight: 10
+  - name: Offres d'emplois
+    parent: pub
+    url: offre # Dossier à ajouter
+    weight: 20
+  - name: CONTACT & EQUIPE
+    identifier: cont1
+    weight: 40
   - name: Contact
+    parent: cont1
     url: contact
-    weight: 60
+    weight: 10
+  - name: Notre équipe
+    parent: cont1
+    url: people
+    weight: 20
+

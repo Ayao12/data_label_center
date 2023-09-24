@@ -12,8 +12,8 @@ baseURL: 'https://dlc-experts.netlify.app/' # Website URL
 ############################
 
 defaultContentLanguage: en
-hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+hasCJKLanguage: true
+defaultContentLanguageInSubdir: true
 removePathAccents: true
 
 ############################

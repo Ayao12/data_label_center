@@ -10,6 +10,58 @@
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
+    <loc>https://dlc-experts.netlify.app/tuto/analyse-panier-menagere/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tag/arules/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/category/arules/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/categories/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tuto/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tag/r/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/category/r/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tag/regles-dassociation/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/category/regles-dassociation/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tag/rstudio/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tags/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/tag/visualisation/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/category/visualisation/</loc>
+    <lastmod>2021-01-07T04:48:50+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
     <loc>https://dlc-experts.netlify.app/</loc>
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,10 +78,6 @@
     <lastmod>2022-10-24T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://dlc-experts.netlify.app/categories/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://dlc-experts.netlify.app/post/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -42,19 +90,11 @@
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://dlc-experts.netlify.app/category/r/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
     <loc>https://dlc-experts.netlify.app/tag/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://dlc-experts.netlify.app/tag/regression/</loc>
-    <lastmod>2020-12-01T21:13:14-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://dlc-experts.netlify.app/tags/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
@@ -115,6 +155,9 @@
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://dlc-experts.netlify.app/admin/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://dlc-experts.netlify.app/author/francis-balo/</loc>
     <changefreq>weekly</changefreq>
   </url><url>
     <loc>https://dlc-experts.netlify.app/author/tchazino-tchamie/</loc>
