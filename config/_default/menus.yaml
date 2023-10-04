@@ -12,7 +12,7 @@ main:
     identifier: proj
     url: event
     weight: 20
-  - name: Tutoriels
+  - name: Blog
     parent: proj
     url: tuto # Dossier à ajouter
     weight: 10

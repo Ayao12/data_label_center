@@ -5,12 +5,43 @@
     <link>https://dlc-experts.netlify.app/tuto/</link>
       <atom:link href="https://dlc-experts.netlify.app/tuto/index.xml" rel="self" type="application/rss+xml" />
     <description>My blog store</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 21 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 02 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dlc-experts.netlify.app/media/logo_hu175947278efd3388f39501f016735ff0_32896_300x300_fit_lanczos_3.png</url>
       <title>My blog store</title>
       <link>https://dlc-experts.netlify.app/tuto/</link>
     </image>
+    
+    <item>
+      <title>Analyse Du Panier De La Ménagère</title>
+      <link>https://dlc-experts.netlify.app/tuto/analyse-panier-managere/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://dlc-experts.netlify.app/tuto/analyse-panier-managere/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p style=&#34;text-align: justify&#34;&gt; 
+Le concept de l&#39;analyse du **panier de la ménagère** fait référence à
+une technique d&#39;analyse de données utilisée pour comprendre les
+comportements des clients, en fonction de leur similitude au produits
+qu&#39;ils achètent et pour découvrir les relations entre ces produits
+achetés. L&#39;idée serait pour une entreprise d&#39;utiliser ces
+apprentissages pour bien mener les campagnes marketing, mieux gérer les
+inventaires, aider les clients à trouver plus rapidement des produits
+pertinents et améliorer les relations clients. Cela peut conduire à
+davantage de ventes croisées et de ventes incitatives en suggérant des
+produits ou services supplémentaires.
+&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;p style=&#34;text-align: justify&#34;&gt; 
+Dans ce tutoriel, nous allons voir comment nous pouvons analyser et
+visualiser les données de transactions, nous trouverons des techniques
+qui peuvent nous aider à trouver des modèles de comportement et de
+désabonnement d&#39;un client en fonction de sa séquence d&#39;achat. Ce
+tutoriel est basé sur l&#39;article de **Suman ghorai** intitulé [&#34;Market
+Basket Analysis&#34;](https://rpubs.com/ghorai77/526368).
+&lt;/p&gt;
+![](got_thyrion.gif)&lt;!-- --&gt;
+</description>
+    </item>
     
     <item>
       <title>Analyse du panier de la ménagère</title>

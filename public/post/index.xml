@@ -5,12 +5,20 @@
     <link>https://dlc-experts.netlify.app/post/</link>
       <atom:link href="https://dlc-experts.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Latest News</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 02 Oct 2023 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://dlc-experts.netlify.app/media/logo_hu175947278efd3388f39501f016735ff0_32896_300x300_fit_lanczos_3.png</url>
       <title>Latest News</title>
       <link>https://dlc-experts.netlify.app/post/</link>
     </image>
+    
+    <item>
+      <title>Analyse </title>
+      <link>https://dlc-experts.netlify.app/post/analyse/</link>
+      <pubDate>Mon, 02 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://dlc-experts.netlify.app/post/analyse/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>

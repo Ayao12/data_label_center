@@ -1,23 +1,21 @@
 ---
-title: Analyse du panier de la ménagère
+title: Analyse Du Panier De La Ménagère
 author: Ayao Nomenyo
-date: "`r Sys.Date()`"
-slug: analyse-panier-menagere
+date: '2023-10-02'
+slug: analyse-panier-managere
 categories:
-  - R
-  - Visualisation
   - arules
+  - R
   - Règles d'association
+  - Visualisation
 tags:
   - R
-  - Rstudio
   - arules
   - Visualisation
-  - Règles d'association
 subtitle: "Partie 1: Règles d'association"
-summary: 'Analyse des données séquentielles et détection des règles d’association '
+summary: 'Analyse des données séquentielles et détection des règles d’association'
 authors: []
-lastmod: '2021-01-07T04:48:50Z'
+lastmod: '2023-10-02T17:24:28Z'
 featured: yes
 image:
   caption: 'Source: Data Mining Concepts and Techniques, Third Edition.'
@@ -47,14 +45,13 @@ editor_options:
   markdown: 
     wrap: 72
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
-
-Le concept de l'analyse du **panier de la ménagère** fait référence à
+<p style="text-align: justify"> 
+Le concept de l'analyse du <strong>panier de la ménagère</strong> fait référence à
 une technique d'analyse de données utilisée pour comprendre les
 comportements des clients, en fonction de leur similitude au produits
 qu'ils achètent et pour découvrir les relations entre ces produits
@@ -64,13 +61,14 @@ inventaires, aider les clients à trouver plus rapidement des produits
 pertinents et améliorer les relations clients. Cela peut conduire à
 davantage de ventes croisées et de ventes incitatives en suggérant des
 produits ou services supplémentaires.
-
+</p>
+<p style="text-align: justify"> 
 Dans ce tutoriel, nous allons voir comment nous pouvons analyser et
 visualiser les données de transactions, nous trouverons des techniques
 qui peuvent nous aider à trouver des modèles de comportement et de
 désabonnement d'un client en fonction de sa séquence d'achat. Ce
-tutoriel est basé sur l'article de **Suman ghorai** intitulé ["Market
-Basket Analysis"](https://rpubs.com/ghorai77/526368).
+tutoriel est basé sur l'article de <strong>Suman ghorai</strong> intitulé <a href="https://rpubs.com/ghorai77/526368">Market Basket Analysis</a>
+</p>
 
 ```{r echo=FALSE,  fig.dim = c(5, 7)}
 knitr::include_graphics("got_thyrion.gif", error = FALSE)
@@ -79,13 +77,14 @@ knitr::include_graphics("got_thyrion.gif", error = FALSE)
 ## Quelques notions de bases
 
 ### Règles de l'Association
-
-Le but de l'analyse du *panier de la ménagère* est souvent d'identifier
+<p style="text-align: justify"> 
+Le but de l'analyse du <strong>panier de la ménagère</strong> est souvent d'identifier
 les règles d'association entre les articles et cela peut être fait par
-l'algorithme **Apriori**. Une règle d'association implique que si un
-élément **A** se produit, alors l'élément **B** se produit également
+l'algorithme <strong>Apriori</strong>. Une règle d'association implique que si un
+élément <strong>A</strong> se produit, alors l'élément <strong>B</strong> se produit également
 avec une certaine probabilité. A titre d'exemple, considérons l'exemple
 suivant:
+</p>
 
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
@@ -101,28 +100,31 @@ dt %>%
  kable_styling(position = "center")
 
 ```
-
+<p style="text-align: justify"> 
 Dans le tableau ci-dessus, nous pouvons voir sept transactions. Chaque
 transaction montre les articles achetés dans cette transaction. Nous
 pouvons représenter nos articles comme un ensemble d'éléments comme suit
 :
+</p>
 
 $$
         I = \{i_1, i_2, \cdots, i_k\}
-$$ Où $k$ est le nombre total d'articles.
+$$
+ Où $ k_1 $ est le nombre total d'articles.
+
 
 Dans le cas de notre table ci-dessus, nous avons
 
 $$ I = \{ \mbox{pain, lait, sucre, œufs, Mayonnaise, Couches} \}$$
-
 Et l'ensemble des transactions est :
 
-$$T = \{ T_1, T_2, T_3, T_4, T_5, T_6, \cdots, T_N \}$$ où $N$ est le
+$$ T = \{ T_1,\ T_2,\ T_3,\ T_4,\ T_5,\ T_6, \cdots, T_N \} $$ où $ N $ est le
 nombre total de transactions.
 
 Par exemple dans notre cas on a:
 
 $$ T_1 = \{\mbox{pain, lait, sucre}\} $$
+
 
 Ensuite, la règle d'association est définie comme une implication de la
 forme :
@@ -130,71 +132,73 @@ forme :
 $$
 X \Rightarrow Y,\,\, \mbox{où}\,\, X\subset I, Y\subset I\,\, \mbox{et}\,\, X\cap Y = \emptyset
 $$
-
 Par exemple, on peut extraire de notre table ci-dessus, la règle
 suivante:
 
 $$\{\mbox{pain, lait}\} \Rightarrow \{\mbox{sucre}\} $$
 
+<p style="text-align: justify"> 
 Toutefois, on peut se poser la question de savoir jusqu'à quel niveau
 cette règle est elle plausible ? ou encore comment évaluer cette règle?
 
 Dans la section suivante, nous allons définir quatre mesures qui nous
 permettrons d'évaluer la précision d'une règle d'association.
+</p>
 
 ### Mésures d'évaluation
 
 #### Support
 
+<p style="text-align: justify"> 
 Le support est une indication de la fréquence d'apparition de l'ensemble
 des items du panier dans l'ensemble de données. Il représente la
 fiabilité. Ce critère permet de fixer un seuil en dessous duquel les
 règles ne sont pas considérées comme fiables. Il est défini comme suit:
-
-$$supp(X\Rightarrow Y)=\frac{|X \cup Y| }{N}$$ En d'autres termes, c'est
-le nombre de transactions avec les deux $X$ et $Y$ divisé par le nombre
+</p>
+$$ supp(X\Rightarrow Y)=\frac{|X \cup Y| }{N} $$ En d'autres termes, c'est
+le nombre de transactions avec les deux $ X $ et $ Y $ divisé par le nombre
 total de transactions. Par exemple avec notre table ci-dessus, nous
 avons:
 
--   $supp(\mbox{pain} \Rightarrow \mbox{lait}) = \frac{3}{7} = 43\%$
+-   $ supp(\mbox{pain} \Rightarrow \mbox{lait}) = \frac{3}{7} = 43\% $
 
--   $supp(\mbox{pain} \Rightarrow \mbox{sucre}) = \frac{2}{7} = 29\%$
+-   $ supp(\mbox{pain} \Rightarrow \mbox{sucre}) = \frac{2}{7} = 29\% $
 
 #### La confiance
 
 La confiance est une indication de la précision de la règle. Pour une
-règle $X\Rightarrow Y$, cela signifie pour $X$ donné quelle est la
-probabilité d'avoir $Y$ dans la même transaction? La confiance d'une
+règle $ X\Rightarrow Y $, cela signifie pour $ X $ donné quelle est la
+probabilité d'avoir $ Y $ dans la même transaction? La confiance d'une
 règle peut être vue comme la probabilité conditionnelle
-$conf(X\Rightarrow Y) = Pr(Y|X)$.
+$ conf(X\Rightarrow Y) = Pr(Y|X) $.
 
-$$conf(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X)}$$
+$$ conf(X\Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X)} $$
 
 Exemple avec notre table de transactions ci-dessus:
 
 -   Considérons la règle
-    $\{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\}$, le support de
-    l'ensemble $\{\mbox{pain, lait}, \mbox{œufs}\}$ est $2$ et le nombre
-    de transaction étant $7$, le support de la règle est donc $2/7$. La
+    $ \{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\} $, le support de
+    l'ensemble $ \{\mbox{pain, lait}, \mbox{œufs}\} $ est $ 2 $ et le nombre
+    de transaction étant $ 7 $, le support de la règle est donc $ 2/7 $. La
     confiance est obtenue en divisant le support de l'ensemble
-    $\{\mbox{pain, lait}, \mbox{œufs}\}$ par le support de l'ensemble
-    $\{\mbox{pain, lait}\}$ qui est égal à $4$. La confiance est donc
-    égale à $2/4 = 50\%$.
+    $ \{\mbox{pain, lait}, \mbox{œufs}\} $ par le support de l'ensemble
+    $ \{\mbox{pain, lait}\} $ qui est égal à $ 4 $. La confiance est donc
+    égale à $ 2/4 = 50\% $.
 
-$$conf(\{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\}) = \frac{2/7}{4/7} = 50\%$$
+$$ conf(\{\mbox{pain, lait}\} \Rightarrow \{\mbox{œufs}\}) = \frac{2/7}{4/7} = 50\% $$
 
--   $conf(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{5/7} = 80\%$
+-   $ conf(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{5/7} = 80\% $
 
 #### Lift
 
 Le lift d'une règle est le rapport du support observé et du support
-attendu si $X$ et $Y$ étaient indépendant. Il est défini comme suit:
+attendu si $ X $ et $ Y $ étaient indépendant. Il est défini comme suit:
 
-$$lift(X \Rightarrow Y)= \frac{supp(X\cup Y)}{supp(X)supp(Y)}$$ Un lift
-supérieur à $1$ indique qu'il existe bien un lien entre les $2$
+$$ lift(X \Rightarrow Y)= \frac{supp(X\cup Y)}{supp(X)supp(Y)} $$ Un lift
+supérieur à $ 1 $ indique qu'il existe bien un lien entre les $ 2 $
 éléments.
 
--   $lift(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{(5/7)(4/7)} = 1.4$
+-   $ lift(\mbox{lait} \Rightarrow \mbox{sucre}) = \frac{4/7}{(5/7)(4/7)} = 1.4 $
 
 ## Description des données
 
@@ -225,8 +229,6 @@ trans <- read.transactions("BreadBasket_DMS.csv"
                            , sep = ",", rm.duplicates = TRUE)
 ```
 
-
-
 ### Analayse et visualisation des donnnées
 
 Dans un premier temps, traçons la fréquence d'achat des articles, afin
@@ -239,7 +241,6 @@ itemFrequencyPlot(trans, topN = 20, type = "absolute"
                   ,  ylab = "Frequence"
                   , main = "Frenquence d'achat des produits")
 ```
-
 Le café (*coffee*) est de loin le produit le plus vendu, suivi du pain
 (*bread*). Il est aussi possible de visualiser les transactions en
 foncton des dates.
@@ -262,6 +263,7 @@ trans_csv %>%
   ggeasy::easy_center_title() + 
   theme_bw()
 ```
+
 
 Les données couvrent les dates du 30/10/2016 au 09/04/2017 et donc le
 mois d'octobre est le mois dont nous avons peu de transactions par
@@ -306,18 +308,20 @@ trans_csv %>%
   theme_bw()
 ```
 
+
 On a plus de transactions à 11h dans la boulangerie.
 
 ## Algorithme apriori
 
 ### Choix du support et de la confiance
-
+<p style="text-align: justify"> 
 Le choix d'un seuil pour le support et la confiance est important dans
 la détermination des règles d'association. Pour des valeurs trop bas,
 l'algorithme prend plus de temps à exécuter et beaucoup de règles sont
 détecter (la plupart d'entre elles ne sont pas utiles). Alors, quelles
 valeurs choisies? Il est recommandé de tester plusieurs valeurs et voir
 graphiquement combien de règles sont générées pour chaque combinaison.
+</p>
 
 ```{r message=FALSE, warning=FALSE, results='hide'}
 # Différentes valeurs du support et de la confiance
@@ -362,6 +366,7 @@ for (i in 1:length(confidenceLevels)){
 }
 ```
 
+
 Dans la figure suivante, nous avons le nombre de règles générées avec
 différentes valeurs du support et de la confiance.
 
@@ -387,6 +392,7 @@ ggplot(data = num_rules, aes(x = confidenceLevels)) +
   theme_bw() +
   theme(legend.title = element_blank())
 ```
+
 
 Analysons le graphique:
 
@@ -414,6 +420,7 @@ rules_sup1_conf50 <- apriori(trans, parameter = list(sup = supportLevels[3],
 # Inspection des règles d'association
 inspect(rules_sup1_conf50)
 ```
+
 
 ```{r echo=FALSE}
 inspect(rules_sup1_conf50)
@@ -445,6 +452,7 @@ plot(rules_sup1_conf50, measure = c("support", "lift")
      , shading = "confidence", main = "Nuage de points des  mesures")
 ```
 
+
 Le graphique suivant représente le graphe des règles d'association. Les
 sommets représentent les articles et les règles sont représentées par
 les liaisons entre les articles à l'aide de flèches.
@@ -461,8 +469,9 @@ taille et la couleur des bulles respectueusement.
 plot(rules_sup1_conf50, method = "grouped")
 ```
 
-## Conclusion
 
+## Conclusion
+<p style="text-align: justify"> 
 L'analyse du panier de la ménagère est une technique très utile pour
 analyser les données. Traditionnellement, il n'est utilisé que pour les
 données de transaction. Cela permettra de booster vos ventes et de
@@ -476,6 +485,7 @@ réponse.
 
 Si cet tutoriel vous a plu ou vous a été utile, n'oubliez pas de le
 partager !.
+</p>
 
 ```{r echo=FALSE,  fig.dim = c(5, 7)}
 knitr::include_graphics("tenor.gif", error = FALSE)
