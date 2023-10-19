@@ -33,7 +33,7 @@ Sotouboua, à partir des données pluviométriques de 63 années (1950 à
 2016) sur 12 mois, nous proposons une analyse en composante principale
 (ACP) dans le logiciel R version 3.5.1. En effet, un ACP est une analyse
 statistique permettant de mesurer les liens ou corrélations entre deux
-variables quantitatives. Il s'agit ici des variables mois et années.
+variables quantitatives. Il s'agit ici des variables pluviométrie mensuelle, mois et années.
 </p>
 
 <p style="text-align: justify">
