@@ -48,8 +48,8 @@ supérieur à 0.05 conduit à l'acceptation de l'hypothèse nulle .
 
 <p style="text-align: justify">
 Sous hypothèse de dépendance (confirmé par le test de Chi-deux) , nous
-allons effectuer l'ACP. L'ACP effectué sur un tableau de contingence \$
-12X63 \$ va répartir toutes l'information apporté par ce tableaux
+allons effectuer l'ACP. L'ACP effectué sur un tableau de contingence $
+12X63 $ va répartir toutes l'information apporté par ce tableaux
 suivant 11 axes (nommés dim) porteurs d'informations (en pourcentage )
 rangé dans l'ordre décroissant. Voici les résultats de l'ACP.
 </p>
